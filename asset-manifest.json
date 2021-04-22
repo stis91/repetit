@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/repetit/static/css/main.bfbbf354.chunk.css",
+    "main.js": "/repetit/static/js/main.d8c82020.chunk.js",
+    "main.js.map": "/repetit/static/js/main.d8c82020.chunk.js.map",
+    "runtime-main.js": "/repetit/static/js/runtime-main.725b6ad9.js",
+    "runtime-main.js.map": "/repetit/static/js/runtime-main.725b6ad9.js.map",
+    "static/js/2.19111b23.chunk.js": "/repetit/static/js/2.19111b23.chunk.js",
+    "static/js/2.19111b23.chunk.js.map": "/repetit/static/js/2.19111b23.chunk.js.map",
+    "static/js/3.31b62e95.chunk.js": "/repetit/static/js/3.31b62e95.chunk.js",
+    "static/js/3.31b62e95.chunk.js.map": "/repetit/static/js/3.31b62e95.chunk.js.map",
+    "index.html": "/repetit/index.html",
+    "static/css/main.bfbbf354.chunk.css.map": "/repetit/static/css/main.bfbbf354.chunk.css.map",
+    "static/js/2.19111b23.chunk.js.LICENSE.txt": "/repetit/static/js/2.19111b23.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.725b6ad9.js",
+    "static/js/2.19111b23.chunk.js",
+    "static/css/main.bfbbf354.chunk.css",
+    "static/js/main.d8c82020.chunk.js"
+  ]
+}
