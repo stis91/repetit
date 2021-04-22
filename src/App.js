@@ -49,7 +49,6 @@ function App() {
       query += `Ids[${i}]=${id}&`
     })
     let url = 'https://api.repetit.ru/public/teachers/short'
-    // console.log(url + query)
     const fetchData = async () => {
       const rawData = await fetch(url + query)
       const data = await rawData.json()

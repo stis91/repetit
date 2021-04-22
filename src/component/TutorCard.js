@@ -1,9 +1,8 @@
 const TutorCard = ({ tutorObject }) => {
-  console.log(tutorObject);
 
   return (
     <div className="tutor-card">
-      <img className="tutor-card__avatar" src={tutorObject.photoPath} />{" "}
+      <img className="tutor-card__avatar" src={tutorObject.photoPath} alt="Фотография репетитора"/>{" "}
       <div className="tutor-card__add-info">
         <p className="tutor-card__name">
           {tutorObject.firstName} {tutorObject.patrName}
