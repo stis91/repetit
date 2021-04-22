@@ -1,38 +1,302 @@
-.App {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset css end */
+
+body {
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  padding: 23px;
+}
+
+.filter-select {
+  width: 100%;
+  height: auto;
+  padding: 14px;
+  border: 2px solid #009990;
+  color: #009990;
+  border-radius: 5px;
+  margin-bottom: 8px;
+
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnNlPSJodHRwOi8vc3ZnLWVkaXQuZ29vZ2xlY29kZS5jb20iIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiIHdpZHRoPSI3NzciIGhlaWdodD0iNDgwIiBzdHlsZT0iIj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGl0bGU+bXkgdmVjdG9yIGltYWdlPC90aXRsZT4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8IS0tIENyZWF0ZWQgd2l0aCBWZWN0b3IgUGFpbnQgLSBodHRwOi8vd3d3LnZlY3RvcnBhaW50Lnlha3MuY29tLyBodHRwczovL2Nocm9tZS5nb29nbGUuY29tL3dlYnN0b3JlL2RldGFpbC9obmJwZGllbmdpY2RlZmNqZWNqYm5qbm9pZmVraGdkbyAtLT4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cmVjdCBpZD0iYmFja2dyb3VuZHJlY3QiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHg9IjAiIHk9IjAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0ibm9uZSIvPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgY2xhc3M9ImN1cnJlbnRMYXllciIgc3R5bGU9IiI+PHRpdGxlPkxheWVyIDE8L3RpdGxlPjxwYXRoIGZpbGw9IiMwMDk5OTAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtZGFzaG9mZnNldD0iIiBmaWxsLXJ1bGU9Im5vbnplcm8iIG1hcmtlci1zdGFydD0iIiBtYXJrZXItbWlkPSIiIG1hcmtlci1lbmQ9IiIgaWQ9InN2Z18xIiBkPSJNMTIyLjE5NTM2ODIwNjUxMzMxLDMyNy4yNjIyMTU1NTI3NDk2IEwxMjIuMTk1MzY4MjA2NTEzMzEsLTIxMy4xMTM0NTYwOTc4NDQ0MiBMNjYyLjU3MTAzOTg1NzEwOTMsMzI3LjI2MjIxNTU1Mjc0OTYgTDEyMi4xOTUzNjgyMDY1MTMzMSwzMjcuMjYyMjE1NTUyNzQ5NiB6IiBzdHlsZT0iY29sb3I6IHJnYigwLCAwLCAwKTsiIGNsYXNzPSIiIHRyYW5zZm9ybT0icm90YXRlKC00NS4xNjM5NTU2ODg0NzY1NiAzOTIuMzgzMjA5MjI4NTE1Niw1Ny4wNzQzODY1OTY2Nzk3MikgIiBzdHJva2Utb3BhY2l0eT0iMSIgZmlsbC1vcGFjaXR5PSIxIi8+PC9nPjwvc3ZnPg=="); 
+
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: auto 20%;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  
+}
+
+
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 5px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
   text-align: center;
+  margin-bottom: 19px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn:hover {
+    cursor: pointer;
+} 
+.btn:active {
+    opacity: 0.75;
+    box-shadow: 0px 0px 7px 0px #00000033;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-main {
+  background-color: #009990;
+  color: #ffffff;
+  border: 2px solid #009990;
+}
+.btn-accent {
+  background-color: #ffffff;
+  color: #009990;
+  border: 2px solid #009990;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tutor-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 89px;
+  box-shadow: 0px 0px 7px 0px #00000033;
+  border-radius: 5px;
+  margin-bottom: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+/* .tutor-card:last-child {
+  margin-bottom: 28px;
+} */
+
+.tutor-card__avatar {
+  width: 57px;
+  height: 57px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tutor-card__name {
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.tutor-card__subject {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.tutor-card__price {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #009990;
+}
+
+@media (min-width: 1152px) {
+  body {
+    font-size: 16px;  
   }
-  to {
-    transform: rotate(360deg);
+  .wrapper {
+    padding: 40px;
+  }
+
+  .filter-panel {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 44px;
+  }
+
+  .filter-select {
+    width: 277px;
+    height: 45px;
+    /* padding-left: 14px; */
+    padding: 10px;
+  
+  }
+  .btn {
+    height: 45px;
+  }
+  .btn-main {
+    width: 188px;
+  }
+  .btn-accent {
+    width: 336px;
+    border-radius: 5px;
+    margin-top: 87px;
+  }
+
+  .tutor-card {
+    width: 850px;
+    margin-bottom: 20px;
+  }
+
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
